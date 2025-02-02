@@ -1,18 +1,3 @@
-document.getElementById('configurator-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Previne trimiterea formularului
-
-    // Preia valorile din formular
-    const motor = document.getElementById('motor').value;
-    const transmisie = document.getElementById('transmisie').value;
-    const culoare = document.getElementById('culoare').value;
-    const jante = document.getElementById('jante').value;
-
-    // Afișează un mesaj cu configurația selectată
-    alert(`Configurația ta:\nMotor: ${motor}\nTransmisie: ${transmisie}\nCuloare: ${culoare}\nJante: ${jante} inch`);
-
-    // Aici poți adăuga logica pentru a trimite datele pe server sau pentru a le salva local
-});
-
 const piston = document.getElementById('piston');
 const foc = document.getElementById('foc');
 const intakeValve = document.getElementById('intake-valve');
@@ -153,19 +138,6 @@ function updateWheels() {
         wheel.style.height = `${size}px`;
     });
 }
-
-
-// Animatie hover pentru previzualizare
-document.querySelector('.car-preview').addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
-    document.getElementById('car-body').style.transform = 
-        `rotateY(${x}deg) rotateX(${y}deg)`;
-});
-
-document.querySelector('.car-preview').addEventListener('mouseleave', () => {
-    document.getElementById('car-body').style.transform = 'none';
-});
 
 // Actualizare parametri fizici
 function updatePhysics() {
