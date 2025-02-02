@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volkswagen Golf 5 - Prezentare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <h1>Volkswagen Golf 5</h1>
+            <p>Fiabilitate și Eleganță în Mișcare</p>
+            <nav>
+                <ul>
+                    <li><a href="#home">Acasă</a></li>
+                    <li><a href="#istoric">Istoric</a></li>
+                    <li><a href="#specificatii">Specificații</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#configurator">Configurator</a></li>
+                    <li><a href="#detalii-motor">Detalii Motor</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGINA PRINCIPALĂ -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Descoperă Golf 5</h2>
+            <p>Un model iconic al Volkswagen, combinând performanța cu confortul.</p>
+        </div>
+    </section>
+
+    <!-- ISTORIC -->
+    <section id="istoric">
+        <div class="container">
+            <h2>Istoric</h2>
+            <p>Lansat în 2003, Golf 5 a redefinit standardele în clasa compactă, oferind un design inovativ și tehnologie avansată.</p>
+            <ul>
+                <li><strong>Modele:</strong> Trendline, Comfortline, GTI, R32.</li>
+                <li><strong>Producție:</strong> 2003-2009.</li>
+                <li><strong>Îmbunătățiri:</strong> Siguranță sporită, motoare eficiente.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SPECIFICAȚII TEHNICE -->
+    <section id="specificatii">
+        <div class="container">
+            <h2>Specificații Tehnice</h2>
+            <table>
+                <tr>
+                    <th>Motor</th>
+                    <td>1.4 TSI, 2.0 TDI, V6 pentru R32</td>
+                </tr>
+                <tr>
+                    <th>Putere</th>
+                    <td>90-250 CP</td>
+                </tr>
+                <tr>
+                    <th>Transmisie</th>
+                    <td>Manuală/Automată DSG</td>
+                </tr>
+                <tr>
+                    <th>Consum</th>
+                    <td>5-8 L/100 km</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie">
+        <div class="container">
+            <h2>Galerie</h2>
+            <div class="gallery">
+                <img src="imagine-frontala.jpg" alt="Imagine frontală Golf 5">
+                <img src="interior.jpg" alt="Interior Golf 5">
+                <img src="spate.jpg" alt="Spatele Golf 5">
+            </div>
+        </div>
+    </section>
+
+<!-- CONFIGURATOR LAT -->
+<section id="configurator">
+    <div class="container-wide">
+        <h2>Configurator Volkswagen Golf 5</h2>
+        <div class="config-grid">
+
+
+            <!-- Coloana Dreaptă - Opțiuni -->
+            <form id="configurator-form" class="config-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="motor">Motorizare</label>
+                        <select id="motor" name="motor" class="wide-select" onchange="updatePhysics()">
+                            <option value="1.4 TSI">1.4 TSI (90 CP)</option>
+                            <option value="2.0 TDI">2.0 TDI (140 CP)</option>
+                            <option value="V6 R32">V6 R32 (250 CP)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transmisie">Transmisie</label>
+                        <select id="transmisie" name="transmisie" class="wide-select" onchange="updatePhysics()">
+                            <option value="manual">Manuală 5 trepte</option>
+                            <option value="dsg">DSG 6 trepte</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group color-picker">
+                        <label>Culoare Caroserie</label>
+                        <div class="color-options">
+                            <div class="color-option" style="background: #fff" onclick="updateColor('#fff')"></div>
+                            <div class="color-option" style="background: #000" onclick="updateColor('#000')"></div>
+                            <div class="color-option" style="background: #666" onclick="updateColor('#666')"></div>
+                            <div class="color-option" style="background: #00f" onclick="updateColor('#00f')"></div>
+                            <div class="color-option" style="background: #f00" onclick="updateColor('#f00')"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jante">Dimensiune Jante</label>
+                        <select id="jante" name="jante" class="wide-select" onchange="updateWheels()">
+                            <option value="16">16" Serron</option>
+                            <option value="17">17" Classix</option>
+                            <option value="18">18" Sport</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Panou Fizică -->
+                <div class="physics-panel">
+                    <h3>Performanță</h3>
+                    <div class="physics-metrics">
+                        <div class="metric">
+                            <span>0-100 km/h:</span>
+                            <strong id="acceleration">8.5s</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Viteză maximă:</span>
+                            <strong id="topSpeed">210 km/h</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Consum mediu:</span>
+                            <strong id="consum">5.8L/100km</strong>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- DETALII MOTOR -->
+<section id="detalii-motor">
+    <div class="container">
+        <h2>Detalii despre Motor</h2>
+        <p>Motorul Volkswagen Golf 5 este disponibil în mai multe variante, fiecare optimizată pentru performanță și eficiență. Iată cum funcționează:</p>
+        
+        <h3>1.4 TSI</h3>
+        <p>Motorul 1.4 TSI este un motor turbo cu injecție directă, oferind un echilibru excelent între putere și consum redus. Acesta utilizează tehnologia Twincharger, care combină un turbocompresor și un compresor mecanic pentru a oferi răspuns rapid la accelerație.</p>
+        
+        <h3>2.0 TDI</h3>
+        <p>Motorul 2.0 TDI este un diesel common rail, cunoscut pentru cuplul ridicat și eficiența sa. Acesta utilizează tehnologia de injecție directă și un turbocompresor variabil pentru a oferi performanță superioară la turații mici și medii.</p>
+        
+        <h3>V6 R32</h3>
+        <p>Motorul V6 R32 este cel mai puternic motor disponibil pentru Golf 5. Acesta este un motor aspirat natural, cu 6 cilindri în configurație V, oferind o experiență de condus sportivă și un sunet distinctiv.</p>
+
+        <!-- Diagrama Motor -->
+        <div class="diagrama-motor">
+            <div class="cilindru">
+                <div class="piston" id="piston"></div>
+                <div class="valve intake" id="intake-valve"></div>
+                <div class="valve exhaust" id="exhaust-valve"></div>
+                <div class="foc" id="foc">
+                    <div class="flacara"></div>
+                </div>
+            </div>
+            <div class="info">
+                <h3 id="cycle-title">Aspirație</h3>
+                <p id="cycle-description">Aerul și combustibilul sunt aspirați în cilindru.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <form action="submit-form.php" method="POST">
+                <label for="name">Nume:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Trimite</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Volkswagen Golf 5 - Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

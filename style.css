@@ -1,0 +1,710 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #000000, #222222);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #f4f4f4;
+}
+
+nav ul {
+    margin-top: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ff4500;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* HERO */
+.hero {
+    background: url('golf5-sport.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero h2, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+/* SECTIUNI */
+section {
+    margin: 50px 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ff4500;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* ISTORIC */
+#istoric p, #istoric ul {
+    margin-bottom: 10px;
+}
+
+#istoric ul {
+    list-style: none;
+    padding: 0;
+}
+
+#istoric ul li {
+    padding-left: 20px;
+    position: relative;
+}
+
+#istoric ul li:before {
+    content: "•";
+    color: #ff4500;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* TABEL SPECIFICAȚII */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2b2b2b;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+    color: #ffffff;
+}
+
+table th {
+    background-color: #333;
+    color: #ff4500;
+    text-transform: uppercase;
+}
+
+/* GALERIE */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #ff4500;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    border-color: #ffffff;
+}
+
+/* FORMULAR CONTACT */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff4500;
+}
+
+form input, form textarea, form button {
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #ffffff;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #ff4500;
+}
+
+form button {
+    background-color: #ff4500;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* CONFIGURATOR */
+#configurator {
+    background-color: #2b2b2b;
+    padding: 40px 0;
+}
+
+#configurator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.form-group select {
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #ffffff;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #ff4500;
+}
+
+#configurator-form button {
+    background-color: #ff4500;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#configurator-form button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* DETALII MOTOR */
+#detalii-motor {
+    background-color: #1a1a1a;
+    padding: 40px 0;
+}
+
+#detalii-motor h3 {
+    color: #ff4500;
+    margin-top: 20px;
+}
+
+.diagrama-motor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cilindru {
+    width: 100px;
+    height: 200px;
+    background-color: #333;
+    border: 2px solid #ff4500;
+    position: relative;
+    overflow: hidden;
+}
+
+.piston {
+    width: 100%;
+    height: 50px;
+    background-color: #ff4500;
+    position: absolute;
+    bottom: 0;
+    transition: transform 2s ease-in-out;
+}
+
+.piston.move-up {
+    transform: translateY(-150px);
+}
+
+.piston.move-down {
+    transform: translateY(0);
+}
+
+.valve {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 10px;
+    border-radius: 50%;
+}
+
+.valve.intake {
+    left: 10px;
+}
+
+.valve.exhaust {
+    right: 10px;
+}
+
+.valve.open {
+    background-color: #00ff00;
+}
+
+.valve.close {
+    background-color: #ff0000;
+}
+
+.info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.info h3 {
+    color: #ff4500;
+}
+
+.info p {
+    color: #f4f4f4;
+}
+
+/* FOOTER */
+footer {
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Stiluri pentru diagrama motorului */
+.diagrama-motor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cilindru {
+    width: 100px;
+    height: 200px;
+    background-color: #333;
+    border: 2px solid #ff4500;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.piston {
+    width: 100%;
+    height: 50px;
+    background-color: #ff4500;
+    position: absolute;
+    bottom: 0;
+    transition: transform 1s ease-in-out;
+    border-radius: 5px;
+}
+
+.piston.move-up {
+    transform: translateY(-150px);
+}
+
+.piston.move-down {
+    transform: translateY(0);
+}
+
+/* Efect de foc pentru explozie */
+.foc {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ff4500, #ff0000, #ff4500);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 50%;
+}
+
+.foc.active {
+    opacity: 1;
+}
+
+/* Stiluri pentru supape */
+.valve {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.valve.intake {
+    left: 10px;
+}
+
+.valve.exhaust {
+    right: 10px;
+}
+
+.valve.open {
+    background-color: #00ff00;
+}
+
+.valve.close {
+    background-color: #ff0000;
+}
+/* Stiluri pentru foc */
+.foc {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Asigură-te că focul nu interferează cu alte elemente */
+}
+
+.foc.active {
+    opacity: 1;
+}
+
+/* Stratul de bază al flăcării */
+.foc .flacara {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #ff4500 10%, #ff0000 50%, transparent 70%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: moveFlame 1.5s infinite ease-in-out;
+}
+
+/* Stratul secundar al flăcării */
+.foc .flacara::before {
+    content: '';
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, #ff8c00 20%, #ff4500 50%, transparent 70%);
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    border-radius: 50%;
+    animation: moveFlame 1s infinite ease-in-out;
+}
+
+/* Stratul terțiar al flăcării */
+.foc .flacara::after {
+    content: '';
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, #ffd700 30%, #ff8c00 60%, transparent 80%);
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    border-radius: 50%;
+    animation: moveFlame 0.5s infinite ease-in-out;
+}
+
+/* Animație pentru mișcarea flăcării */
+@keyframes moveFlame {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.1);
+    }
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.wide-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #444;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.color-picker .color-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.physics-panel {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.physics-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.metric {
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+.metric span {
+    display: block;
+    color: #ff4500;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.metric strong {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .config-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .car-preview {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .physics-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .config-grid {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .color-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .color-option {
+        width: 30px;
+        height: 30px;
+    }
+
+    .config-grid {
+        flex-direction: column;
+    }
+
+    .physics-panel {
+        padding: 15px;
+    }
+
+    .metric strong {
+        font-size: 1rem;
+    }
+}
